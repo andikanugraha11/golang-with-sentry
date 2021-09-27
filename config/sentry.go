@@ -8,9 +8,10 @@ import (
 
 func InitSentry() {
 	err := sentry.Init(sentry.ClientOptions{
-		Dsn: "https://examplePublicKey@o0.ingest.sentry.io/0",
+		Dsn: "<URL_SENTRY>",
 	})
 	if err != nil {
 		log.Fatalf("sentry.Init: %s", err)
 	}
+	sentry.CaptureMessage("It works!")
 }
